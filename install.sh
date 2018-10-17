@@ -4,12 +4,15 @@
 workspace=$(pwd)
 
 # initially install
-sudo pacman -S xorg-xinit i3-gaps polybar dunst fcitx fcitx-rime compton curl \
-  zsh
+sudo pacman -S xorg i3-gaps polybar dunst fcitx fcitx-rime compton curl \
+  zsh wqy-microhei wqy-zenhei dmenu gnome-screenshot pulseaudio pulseaudio-alsa \
+  pamixer nitrogen lxappearance pavucontrol polkit-gnome
 
 if [ $? -ne 0 ]; then
-  return 1
+  exit 1
 fi
+
+pikaur -S lux clipit
 
 if [ ! -d $HOME/.config ]; then
   mkdir $HOME/.config
@@ -18,9 +21,9 @@ fi
 # oh-my-zsh
 if [ ! -d $HOME/.oh-my-zsh ]; then
   sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-fi
-if [ $? -ne 0 ]; then
-  return 1
+  if [ $? -ne 0 ]; then
+    return 1
+  fi
 fi
 if [ -f $workspace/.zshrc ]; then
   ln -si $workspace/.zshrc $HOME/.zshrc
