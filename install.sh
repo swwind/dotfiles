@@ -51,3 +51,10 @@ if [ -d $workspace/.config/dunst ]; then
   ln -sdi $workspace/.config/dunst $HOME/.config/
 fi
 
+# vim plus
+if [ ! -d $HOME/.vimplus ]; then
+  git clone https://github.com/chxuan/vimplus.git $HOME/.vimplus
+  cd $HOME/.vimplus
+  ./install.sh
+  cd $workspace
+fi
