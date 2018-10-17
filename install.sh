@@ -11,39 +11,43 @@ if [ $? -ne 0 ]; then
   return 1
 fi
 
+if [ ! -d $HOME/.config ]; then
+  mkdir $HOME/.config
+fi
+
 # oh-my-zsh
-if [ ! -d ~/.oh-my-zsh ]; then
+if [ ! -d $HOME/.oh-my-zsh ]; then
   sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 fi
 if [ $? -ne 0 ]; then
   return 1
 fi
 if [ -f $workspace/.zshrc ]; then
-  ln -sf $workspace/.zshrc ~/.zshrc
+  ln -si $workspace/.zshrc $HOME/.zshrc
 fi
 
 # configure xinitrc
 if [ -f $workspace/.xinitrc ]; then
-  ln -sf $workspace/.xinitrc ~/.xinitrc
+  ln -si $workspace/.xinitrc $HOME/.xinitrc
 fi
 
 # i3wm
-if [ -f $workspace/.config/i3/config ]; then
-  ln -sfd $workspace/.config/i3 ~/.config/i3
+if [ -d $workspace/.config/i3 ]; then
+  ln -sdi $workspace/.config/i3 $HOME/.config/
 fi
 
 # polybar
-if [ -f $workspace/.config/polybar/config -a -f $workspace/.config/polybar/launch_polybar ]; then
-  ln -sfd $workspace/.config/polybar ~/.config/polybar
+if [ -d $workspace/.config/polybar ]; then
+  ln -sdi $workspace/.config/polybar $HOME/.config/
 fi
 
 # compton
 if [ -f $workspace/.config/compton.conf ]; then
-  ln -sf $workspace/.config/compton.conf ~/.config/compton.conf
+  ln -sf $workspace/.config/compton.conf $HOME/.config/compton.conf
 fi
 
 # dunst
-if [ -f $workspace/.config/dunst/dunstrc ]; then
-  ln -sfd $workspace/.config/dunst ~/.config/dunst
+if [ -d $workspace/.config/dunst ]; then
+  ln -sdi $workspace/.config/dunst $HOME/.config/
 fi
 
