@@ -234,12 +234,12 @@ bindsym XF86MonBrightnessUp exec --no-startup-id lux -a 500
 # Application Launcher
 # TODO: change to `environment variables`
 bindsym $mod+o mode "$funclauncher"
-set $funclauncher App: (w)eb browser, (f)ile manager, (c)lipmenu
+set $funclauncher App: (w)eb browser, (f)ile manager, (s)creenshot
 
 mode "$funclauncher" {
   bindsym w exec --no-startup-id optirun firefox; mode "default"
   bindsym f exec --no-startup-id thunar; mode "default"
-  bindsym c exec --no-startup-id clipmenu; mode "default"
+  bindsym s exec --no-startup-id optirun gnome-screenshot -a; mode "default"
   bindsym Escape mode "default"
   bindsym Return mode "default"
 }
