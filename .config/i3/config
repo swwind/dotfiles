@@ -237,7 +237,7 @@ bindsym $mod+o mode "$funclauncher"
 set $funclauncher App: (w)eb browser, (f)ile manager, (s)creenshot
 
 mode "$funclauncher" {
-  bindsym w exec --no-startup-id optirun firefox; mode "default"
+  bindsym w exec --no-startup-id optirun firefox-nightly; mode "default"
   bindsym f exec --no-startup-id thunar; mode "default"
   bindsym s exec --no-startup-id optirun gnome-screenshot -a; mode "default"
   bindsym Escape mode "default"
