@@ -24,7 +24,8 @@ module-bg   = #f00a0a0a
 selected-bg = #dc1a1a1a
 
 text-fg = #c8c8c8
-icon-fg = ${xcolor.color1}
+; icon-fg = ${xcolor.color1}
+icon-fg = ${xcolor.fg}
 bar-fg  = ${xcolor.color3}
 
 red     = #821717
@@ -325,8 +326,8 @@ type = internal/date
 inherit = generic-format-style
 interval = 1
 
-date = %{T6}%{F#a54242}%{F-}%{T-} %Y-%m-%d% 
-date-alt = %{T6}%{F#a54242}%{F-}%{T-} %A, %d %B %Y
+date = %{T6}%{F-}%{T-} %Y-%m-%d% 
+date-alt = %{T6}%{F-}%{T-} %A, %d %B %Y
 
 time = %H:%M
 time-alt = %H:%M:%S

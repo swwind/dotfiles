@@ -6,11 +6,7 @@ workspace=$(pwd)
 # initially install
 sudo pacman -S xorg i3-gaps polybar dunst fcitx fcitx-rime compton curl \
   zsh wqy-microhei wqy-zenhei dmenu gnome-screenshot pulseaudio pulseaudio-alsa \
-  pamixer nitrogen lxappearance pavucontrol polkit-gnome
-
-if [ $? -ne 0 ]; then
-  exit 1
-fi
+  pamixer nitrogen lxappearance pavucontrol polkit-gnome fcitx-{gtk2,gtk3,qt4,qt5} \
 
 pikaur -S lux clipit
 
