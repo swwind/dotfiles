@@ -105,6 +105,7 @@ set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
+set $ws10 "NOTE"
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -145,6 +146,7 @@ set $powermgr Power Manager: (e)xit, (l)ockscreen
 
 mode "$powermgr" {
   bindsym e exec --no-startup-id "i3-msg exit"
+  bindsym l exec --no-startup-id "betterlockscreen -l"; mode default
   bindsym Escape mode "default"
   bindsym Return mode "default"
   bindsym $mod+0 mode "default"
@@ -237,7 +239,7 @@ bindsym $mod+o mode "$funclauncher"
 set $funclauncher App: (w)eb browser, (f)ile manager, (s)creenshot
 
 mode "$funclauncher" {
-  bindsym w exec --no-startup-id optirun firefox-nightly; mode "default"
+  bindsym w exec --no-startup-id chromium; mode "default"
   bindsym f exec --no-startup-id thunar; mode "default"
   bindsym s exec --no-startup-id optirun gnome-screenshot -a; mode "default"
   bindsym Escape mode "default"
@@ -271,15 +273,18 @@ exec --no-startup-id fcitx
 # TODO: ~/.config/dunst (low, normal, critical)
 exec --no-startup-id dunst&
 
+# power manager
+exec --no-startup-id xfce4-power-manager
+
 # Tray Solution
 # TODO
 
 # GUI applications default state
 # TODO
-for_window [class="(?i)pavucontrol|nm-connection-editor|lxappearance|nitrogen|xarchiver|viewnior"] floating enable, resize set 1280 720, move position center, focus
+for_window [class="(?i)pavucontrol|nm-connection-editor|lxappearance|nitrogen|xarchiver|viewnior"] floating enable, move position center, focus
 for_window [window_type="dialog|menu"] floating enable
 for_window [window_role="pop-up|bubble|task_dialog|Preferences"] floating enable
-for_window [class="(?i)qt5ct|qtconfig-qt4"] floating enable, resize set 1280 720, move position center, focus
+for_window [class="(?i)qt5ct|qtconfig-qt4|gnome-todo"] floating enable, resize set 1280 720, move position center, focus
 
 # Default Colors
 # TODO
@@ -305,3 +310,5 @@ client.background       $bg
 
 # StatusBar
 exec_always --no-startup-id $HOME/.config/polybar/launch_polybar
+
+

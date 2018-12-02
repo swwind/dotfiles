@@ -56,7 +56,7 @@ cursor-scroll = ns-resize
 
 ; Use `WenQuanYi Micro Hei` instead
 ;   because Japanese font priority is higher than Chinese (in default cases)
-font-0 = WenQuanYi Micro Hei:size=10;3
+font-0 = WenQuanYi Micro Hei:size=11;3
 ; Material Design Icons
 font-1 = mplus Nerd Font:style=Medium:size=11;3
 ; Powerline Glyphs
@@ -66,8 +66,6 @@ font-2 = mplus Nerd Font:style=Medium:size=16;3
 font-3 = mplus Nerd Font:style=Medium:size=12;3
 ; Smaller font size for shorter spaces
 font-4 = mplus Nerd Font:style=Medium:size=7;3
-
-font-5 = Font Awesome 5 Free:style=Medium:size=12;3
 
 [bar/top-primary]
 inherit = bar/base
@@ -326,8 +324,10 @@ type = internal/date
 inherit = generic-format-style
 interval = 1
 
-date = %{T6}%{F-}%{T-} %Y-%m-%d% 
-date-alt = %{T6}%{F-}%{T-} %A, %d %B %Y
+format = %{T4}%{T-} <label>
+
+date = %Y-%m-%d% 
+date-alt = %A, %d %B %Y
 
 time = %H:%M
 time-alt = %H:%M:%S

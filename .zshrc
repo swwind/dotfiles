@@ -97,5 +97,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-[[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx
 export PATH=/opt/rakudo/install/bin/:/opt/rakudo/install/share/perl6/site/bin:$PATH
+alias socks="proxychains -q"
+
+[[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx
