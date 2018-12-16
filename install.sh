@@ -3,10 +3,13 @@
 # global variable
 workspace=$(pwd)
 
+sudo pacman-mirror -c China
+sudo pacman -Syyu
+
 # initially install
 sudo pacman -S xorg i3-gaps polybar dunst fcitx fcitx-rime compton curl \
-  zsh wqy-microhei wqy-zenhei dmenu gnome-screenshot pulseaudio pulseaudio-alsa \
-  pamixer nitrogen lxappearance pavucontrol polkit-gnome fcitx-{gtk2,gtk3,qt4,qt5} \
+  zsh wqy-microhei wqy-zenhei gnome-screenshot pulseaudio pulseaudio-alsa \
+  pamixer nitrogen lxappearance pavucontrol polkit-gnome fcitx-{gtk2,gtk3,qt4,qt5}
 
 pikaur -S lux clipit
 
@@ -51,9 +54,9 @@ if [ -d $workspace/.config/dunst ]; then
 fi
 
 # vim plus
-if [ ! -d $HOME/.vimplus ]; then
-  git clone https://github.com/chxuan/vimplus.git $HOME/.vimplus
-  cd $HOME/.vimplus
-  ./install.sh
-  cd $workspace
-fi
+# if [ ! -d $HOME/.vimplus ]; then
+#   git clone https://github.com/chxuan/vimplus.git $HOME/.vimplus
+#   cd $HOME/.vimplus
+#   ./install.sh
+#   cd $workspace
+# fi

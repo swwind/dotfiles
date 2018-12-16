@@ -145,11 +145,11 @@ bindsym $mod+0 mode "$powermgr"
 set $powermgr Power Manager: (e)xit, (l)ockscreen
 
 mode "$powermgr" {
-  bindsym e exec --no-startup-id "i3-msg exit"
-  bindsym l exec --no-startup-id "betterlockscreen -l"; mode default
+  bindsym e exec --no-startup-id i3-msg exit
+  bindsym s exec --no-startup-id shutdown -h now
+  bindsym l exec --no-startup-id betterlockscreen -l; mode "default"
   bindsym Escape mode "default"
   bindsym Return mode "default"
-  bindsym $mod+0 mode "default"
 }
 
 # resize window (you can also use the mouse for that)
@@ -174,7 +174,6 @@ mode "$resize" {
   # back to normal: Enter or Escape or $mod+r
   bindsym Return mode "default"
   bindsym Escape mode "default"
-  bindsym $mod+r mode "default"
 }
 
 # Color scheme (Gruvbox dark)
@@ -236,12 +235,13 @@ bindsym XF86MonBrightnessUp exec --no-startup-id lux -a 500
 # Application Launcher
 # TODO: change to `environment variables`
 bindsym $mod+o mode "$funclauncher"
-set $funclauncher App: (w)eb browser, (f)ile manager, (s)creenshot
+set $funclauncher App: (w)eb browser, (f)ile manager, (s)creenshot, (m)usic
 
 mode "$funclauncher" {
-  bindsym w exec --no-startup-id chromium; mode "default"
+  bindsym w exec --no-startup-id google-chrome-stable; mode "default"
   bindsym f exec --no-startup-id thunar; mode "default"
-  bindsym s exec --no-startup-id optirun gnome-screenshot -a; mode "default"
+  bindsym s exec --no-startup-id gnome-screenshot -a; mode "default"
+  bindsym m exec --no-startup-id netease-cloud-music; mode "default"
   bindsym Escape mode "default"
   bindsym Return mode "default"
 }
