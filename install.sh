@@ -4,12 +4,17 @@
 workspace=$(pwd)
 
 sudo pacman-mirror -c China
+
+sudo echo -e '[archlinuxcn]\nSigLevel = Optional TrustedOnly\nServer = https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/$arch' >> /etc/pacman.conf
+
 sudo pacman -Syyu
 
 # initially install
 sudo pacman -S xorg i3-gaps polybar dunst fcitx fcitx-rime compton curl \
   zsh wqy-microhei wqy-zenhei gnome-screenshot pulseaudio pulseaudio-alsa \
-  pamixer nitrogen lxappearance pavucontrol polkit-gnome fcitx-{gtk2,gtk3,qt4,qt5}
+  pamixer nitrogen lxappearance pavucontrol polkit-gnome fcitx-{gtk2,gtk3,qt4,qt5} \
+  pikaur xfce4-terminal nerd-fonts-complete google-chrome visual-studio-code-bin \
+  nodejs npm
 
 pikaur -S lux clipit
 
