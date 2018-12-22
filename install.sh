@@ -54,9 +54,9 @@ if [ -f $workspace/.config/compton.conf ]; then
 fi
 
 # dunst
-if [ -d $workspace/.config/dunst ]; then
-  ln -sdi $workspace/.config/dunst $HOME/.config/
-fi
+# if [ -d $workspace/.config/dunst ]; then
+#  ln -sdi $workspace/.config/dunst $HOME/.config/
+# fi
 
 # vim plus
 # if [ ! -d $HOME/.vimplus ]; then
