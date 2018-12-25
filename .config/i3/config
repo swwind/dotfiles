@@ -48,7 +48,7 @@ new_float normal
 hide_edge_borders none
 
 # focus and mouse
-focus_follows_mouse no
+focus_follows_mouse yes
 
 # pixels of borders (change border manually)
 for_window [class="^.*"] border pixel 2
@@ -105,7 +105,6 @@ set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
-set $ws10 "NOTE"
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -145,11 +144,11 @@ bindsym $mod+0 mode "$powermgr"
 set $powermgr Power Manager: (e)xit, (l)ockscreen
 
 mode "$powermgr" {
-  bindsym e exec --no-startup-id i3-msg exit
-  bindsym s exec --no-startup-id shutdown -h now
+  bindsym e exec --no-startup-id "i3-msg exit"
   bindsym l exec --no-startup-id betterlockscreen -l; mode "default"
   bindsym Escape mode "default"
   bindsym Return mode "default"
+  bindsym $mod+0 mode "default"
 }
 
 # resize window (you can also use the mouse for that)
@@ -174,6 +173,7 @@ mode "$resize" {
   # back to normal: Enter or Escape or $mod+r
   bindsym Return mode "default"
   bindsym Escape mode "default"
+  bindsym $mod+r mode "default"
 }
 
 # Color scheme (Gruvbox dark)
@@ -229,19 +229,20 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id pamixer -i 7
 bindsym XF86AudioLowerVolume exec --no-startup-id pamixer -d 7
 
 # Backlight Control (backend: lux)
-bindsym XF86MonBrightnessDown exec --no-startup-id lux -s 500
-bindsym XF86MonBrightnessUp exec --no-startup-id lux -a 500
+bindsym XF86MonBrightnessDown exec --no-startup-id lux -s 50
+bindsym XF86MonBrightnessUp exec --no-startup-id lux -a 50
 
 # Application Launcher
 # TODO: change to `environment variables`
 bindsym $mod+o mode "$funclauncher"
-set $funclauncher App: (w)eb browser, (f)ile manager, (s)creenshot, (m)usic
+set $funclauncher App: (w)eb browser, (f)ile manager, (m)usic player, (s)creenshot
 
 mode "$funclauncher" {
   bindsym w exec --no-startup-id google-chrome-stable; mode "default"
+  bindsym Shift+w exec --no-startup-id google-chrome-stable --disable-web-security; mode "default"
   bindsym f exec --no-startup-id thunar; mode "default"
-  bindsym s exec --no-startup-id gnome-screenshot -a; mode "default"
   bindsym m exec --no-startup-id netease-cloud-music; mode "default"
+  bindsym s exec --no-startup-id gnome-screenshot -a; mode "default"
   bindsym Escape mode "default"
   bindsym Return mode "default"
 }
@@ -273,9 +274,6 @@ exec --no-startup-id fcitx
 # TODO: ~/.config/dunst (low, normal, critical)
 exec --no-startup-id dunst&
 
-# power manager
-exec --no-startup-id xfce4-power-manager
-
 # Tray Solution
 # TODO
 
@@ -284,14 +282,15 @@ exec --no-startup-id xfce4-power-manager
 for_window [class="(?i)pavucontrol|nm-connection-editor|lxappearance|nitrogen|xarchiver|viewnior"] floating enable, move position center, focus
 for_window [window_type="dialog|menu"] floating enable
 for_window [window_role="pop-up|bubble|task_dialog|Preferences"] floating enable
-for_window [class="(?i)qt5ct|qtconfig-qt4|gnome-todo"] floating enable, resize set 1280 720, move position center, focus
+for_window [class="(?i)qt5ct|qtconfig-qt4"] floating enable, resize set 1280 720, move position center, focus
 
 # Default Colors
 # TODO
 # use fallback
 set_from_resource $bg     color0 #0a0a0a
 set_from_resource $fg     color7 #c8c8c8
-set_from_resource $color1 color1 #a54242
+# set_from_resource $color1 color1 #a54242
+set_from_resource $color1 color1 #03a9f4
 set_from_resource $color2 color2 #8c9440
 set_from_resource $color3 color3 #de935f
 set_from_resource $color4 color4 #5f819d
@@ -310,5 +309,3 @@ client.background       $bg
 
 # StatusBar
 exec_always --no-startup-id $HOME/.config/polybar/launch_polybar
-
-
