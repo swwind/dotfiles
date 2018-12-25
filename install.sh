@@ -65,3 +65,10 @@ fi
 #   ./install.sh
 #   cd $workspace
 # fi
+
+# psw
+if [ ! -d $workspace/Repositories ]; then
+  mkdir $workspace/Repositories
+  git clone https://swwind@github.com/swwind/code.git $workspace/Repositories/code
+  ln -s $workspace/Repositories/code/applications/psw.sh $workspace/Applications/psw
+fi
