@@ -10,15 +10,13 @@ workspace=$(pwd)
 #sudo pacman -Syyu
 
 # initially install
-#sudo pacman -S xorg i3-gaps polybar dunst fcitx fcitx-rime compton curl \
-#  zsh wqy-microhei wqy-zenhei gnome-screenshot pulseaudio pulseaudio-alsa \
-#  pamixer nitrogen lxappearance pavucontrol polkit-gnome fcitx-{gtk2,gtk3,qt4,qt5} \
-#  pikaur xfce4-terminal nerd-fonts-complete google-chrome visual-studio-code-bin \
-#  nodejs npm
+sudo pacman -S xorg i3-gaps polybar dunst fcitx fcitx-rime compton curl \
+  zsh wqy-microhei wqy-zenhei gnome-screenshot pulseaudio pulseaudio-alsa \
+  pamixer nitrogen lxappearance pavucontrol polkit-gnome fcitx-{gtk2,gtk3,qt4,qt5} \
+  pikaur xfce4-terminal nerd-fonts-complete google-chrome visual-studio-code-bin \
+  nodejs npm
 
-#pikaur -S lux clipit
-
-#exit 0
+pikaur -S lux clipit
 
 if [ ! -d $HOME/.config ]; then
   mkdir $HOME/.config
@@ -52,7 +50,7 @@ fi
 
 # compton
 if [ -f $workspace/.config/compton.conf ]; then
-  ln -sf $workspace/.config/compton.conf $HOME/.config/compton.conf
+  ln -si $workspace/.config/compton.conf $HOME/.config/compton.conf
 fi
 
 # dunst
@@ -72,5 +70,5 @@ fi
 if [ ! -d $HOME/Repositories ]; then
   mkdir $HOME/Repositories
   git clone https://swwind@github.com/swwind/code.git $HOME/Repositories/code
-  ln -s $HOME/Repositories/code/applications/psw.sh $HOME/Applications/psw
+  ln -si $HOME/Repositories/code/applications/psw.sh $HOME/Applications/psw
 fi
