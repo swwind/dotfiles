@@ -12,8 +12,8 @@ set $mod Mod4
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-## font pango:DejaVu Sans Mono 11
-font pango: WenQuanYi Micro Hei Mono Regular 11
+font pango: DejaVu Sans Mono 11
+#font pango: WenQuanYi Micro Hei Mono Regular 11
 
 
 # Before i3 v4.8, we used to recommend this one as the default:
@@ -141,11 +141,12 @@ bindsym $mod+Shift+r restart
 ## bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 bindsym $mod+0 mode "$powermgr"
-set $powermgr Power Manager: (e)xit, (l)ockscreen
+set $powermgr Power Manager: (e)xit, (l)ockscreen, (s)hutdown
 
 mode "$powermgr" {
   bindsym e exec --no-startup-id "i3-msg exit"
   bindsym l exec --no-startup-id betterlockscreen -l; mode "default"
+  bindsym s exec --no-startup-id shutdown -h now; mode "default"
   bindsym Escape mode "default"
   bindsym Return mode "default"
   bindsym $mod+0 mode "default"
@@ -212,9 +213,8 @@ smart_gaps on
 smart_borders on
 
 # take screenshots
-bindsym Print exec --no-startup-id gnome-screenshot
+bindsym Print exec --no-startup-id flameshot gui
 ## bindsym $mod+Shift+Print exec --no-startup-id zsh -c "gnome-screenshot -a 2>&1 /home/timber3252/test.log"
-bindsym $mod+Shift+Print exec --no-startup-id gnome-screenshot -ai
 
 # scratchpad workspace
 # Show the next scratchpad window or hide the focused scratchpad window.
@@ -235,13 +235,14 @@ bindsym XF86MonBrightnessUp exec --no-startup-id lux -a 50
 # Application Launcher
 # TODO: change to `environment variables`
 bindsym $mod+o mode "$funclauncher"
-set $funclauncher App: (w)eb browser, (f)ile manager, (m)usic player, (s)creenshot
+set $funclauncher App: (w)eb browser, (f)ile manager, (m)usic player, (s)creenshot, (t)ypora
 
 mode "$funclauncher" {
-  bindsym w exec --no-startup-id google-chrome-stable; mode "default"
+  bindsym w exec --no-startup-id google-chrome-stable --force-device-scale-factor=1.20; mode "default"
+  bindsym t exec --no-startup-id typora --force-device-scale-factor=1.25; mode "default";
   bindsym Shift+w exec --no-startup-id google-chrome-stable --disable-web-security; mode "default"
   bindsym f exec --no-startup-id thunar; mode "default"
-  bindsym m exec --no-startup-id netease-cloud-music; mode "default"
+  bindsym m exec --no-startup-id electron-netease-cloud-music; mode "default"
   bindsym s exec --no-startup-id gnome-screenshot -a; mode "default"
   bindsym Escape mode "default"
   bindsym Return mode "default"
@@ -267,12 +268,16 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 # TODO: compton config
 exec --no-startup-id nitrogen --restore; sleep 1; compton -b
 # load clipboard manager
+exec --no-startup-id nm-applet&
 exec --no-startup-id clipit&
 # load fcitx
 exec --no-startup-id fcitx
 # load desktop notification
 # TODO: ~/.config/dunst (low, normal, critical)
 exec --no-startup-id dunst&
+exec --no-startup-id electron-ssr&
+exec --no-startup-id flameshot
+exec --no-startup-id anbox-bridge
 
 # Tray Solution
 # TODO

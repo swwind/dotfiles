@@ -3,20 +3,22 @@
 # global variable
 workspace=$(pwd)
 
-sudo pacman-mirror -c China
+#sudo pacman-mirror -c China
 
-sudo echo -e '[archlinuxcn]\nSigLevel = Optional TrustedOnly\nServer = https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/$arch' >> /etc/pacman.conf
+#sudo echo -e '[archlinuxcn]\nSigLevel = Optional TrustedOnly\nServer = https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/$arch' >> /etc/pacman.conf
 
-sudo pacman -Syyu
+#sudo pacman -Syyu
 
 # initially install
-sudo pacman -S xorg i3-gaps polybar dunst fcitx fcitx-rime compton curl \
-  zsh wqy-microhei wqy-zenhei gnome-screenshot pulseaudio pulseaudio-alsa \
-  pamixer nitrogen lxappearance pavucontrol polkit-gnome fcitx-{gtk2,gtk3,qt4,qt5} \
-  pikaur xfce4-terminal nerd-fonts-complete google-chrome visual-studio-code-bin \
-  nodejs npm
+#sudo pacman -S xorg i3-gaps polybar dunst fcitx fcitx-rime compton curl \
+#  zsh wqy-microhei wqy-zenhei gnome-screenshot pulseaudio pulseaudio-alsa \
+#  pamixer nitrogen lxappearance pavucontrol polkit-gnome fcitx-{gtk2,gtk3,qt4,qt5} \
+#  pikaur xfce4-terminal nerd-fonts-complete google-chrome visual-studio-code-bin \
+#  nodejs npm
 
-pikaur -S lux clipit
+#pikaur -S lux clipit
+
+#exit 0
 
 if [ ! -d $HOME/.config ]; then
   mkdir $HOME/.config
@@ -67,8 +69,8 @@ fi
 # fi
 
 # psw
-if [ ! -d $workspace/Repositories ]; then
-  mkdir $workspace/Repositories
-  git clone https://swwind@github.com/swwind/code.git $workspace/Repositories/code
-  ln -s $workspace/Repositories/code/applications/psw.sh $workspace/Applications/psw
+if [ ! -d $HOME/Repositories ]; then
+  mkdir $HOME/Repositories
+  git clone https://swwind@github.com/swwind/code.git $HOME/Repositories/code
+  ln -s $HOME/Repositories/code/applications/psw.sh $HOME/Applications/psw
 fi

@@ -1,14 +1,17 @@
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/Applications:/usr/local/bin:$PATH
+export PATH=$HOME/.yarn/bin:$HOME/Repositories/code/applications:$HOME/Applications:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-  export ZSH="$HOME/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="robbyrussell"
+#ZSH_THEME=random
+#ZSH_THEME="philips"
+
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -100,4 +103,12 @@ source $ZSH/oh-my-zsh.sh
 export PATH=/opt/rakudo/install/bin/:/opt/rakudo/install/share/perl6/site/bin:$PATH
 alias socks="proxychains -q"
 
-[[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx
+#[[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx
+
+#alias for cnpm
+alias cnpm="npm --registry=https://registry.npm.taobao.org \
+  --cache=$HOME/.npm/.cache/cnpm \
+  --disturl=https://npm.taobao.org/dist \
+  --userconfig=$HOME/.cnpmrc"
+alias p="proxychains -q"
+
