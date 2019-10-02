@@ -78,7 +78,7 @@ class NowPlaying(object):
         :param _player: The player that started playing
         :return: None
         """
-        self.icon = '契'
+        self.icon = ''
         self.print_status()
 
     def on_pause(self, _player) -> None:
@@ -86,7 +86,7 @@ class NowPlaying(object):
         :param _player: The player that got paused
         :return: None
         """
-        self.icon = ''
+        self.icon = '契'
         self.print_status()
 
     def on_metadata(self, _player, data) -> None:
