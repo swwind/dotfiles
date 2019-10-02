@@ -20,7 +20,7 @@ install() {
     pamixer nitrogen lxappearance pavucontrol polkit-gnome fcitx-{gtk2,gtk3,qt4,qt5} \
     pikaur xfce4-terminal nerd-fonts-complete google-chrome visual-studio-code-bin \
     nodejs npm flameshot electron-netease-cloud-music git playerctl python-gobject \
-    libsodium
+    libsodium xclip
 
   pikaur -S lux clipit electron-ssr
 }
