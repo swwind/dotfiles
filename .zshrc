@@ -1,5 +1,5 @@
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/.yarn/bin:$HOME/Repositories/code/applications:$HOME/Applications:/usr/local/bin:$PATH
+export PATH=$HOME/.yarn/bin:$HOME/Applications:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -100,8 +100,8 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-export PATH=/opt/rakudo/install/bin/:/opt/rakudo/install/share/perl6/site/bin:$PATH
-alias socks="proxychains -q"
+#export PATH=/opt/rakudo/install/bin/:/opt/rakudo/install/share/perl6/site/bin:$PATH
+#alias socks="proxychains -q"
 
 #[[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx
 

@@ -2,7 +2,7 @@
 
 set -e
 
-workspace=$(dirname "$0")
+workspace=$(dirname `realpath "$0"`)
 
 archlinuxcn() {
   echo "===== (1) Add Archlinux CN ====="
@@ -15,12 +15,12 @@ archlinuxcn() {
 install() {
   echo "===== (2) Install Packages ====="
 
-  sudo pacman -S xorg i3-gaps polybar dunst fcitx fcitx-sogoupinyin compton curl \
-    zsh wqy-microhei wqy-zenhei gnome-screenshot pulseaudio pulseaudio-alsa \
-    pamixer nitrogen lxappearance pavucontrol polkit-gnome fcitx-{gtk2,gtk3,qt4,qt5} \
-    pikaur xfce4-terminal nerd-fonts-complete google-chrome visual-studio-code-bin \
-    nodejs npm flameshot electron-netease-cloud-music git playerctl python-gobject \
-    libsodium xclip
+  sudo pacman -S xorg i3-gaps polybar dunst fcitx compton xorg-init curl \
+                 zsh wqy-microhei wqy-zenhei pulseaudio pulseaudio-alsa \
+                 pamixer nitrogen lxappearance pavucontrol polkit-gnome fcitx-{gtk2,gtk3,qt4,qt5} \
+                 pikaur xfce4-terminal nerd-fonts-complete google-chrome visual-studio-code-bin \
+                 nodejs npm flameshot electron-netease-cloud-music git playerctl python-gobject \
+                 libsodium xclip
 
   pikaur -S lux clipit electron-ssr
 }
@@ -39,19 +39,19 @@ config() {
   fi
 
   # oh-my-zsh
-  if [ ! -d $HOME/.oh-my-zsh ]; then
-    sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-    if [ $? -ne 0 ]; then
-      return 1
-    fi
-  fi
+  #if [ ! -d $HOME/.oh-my-zsh ]; then
+  #  sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+  #  if [ $? -ne 0 ]; then
+  #    return 1
+  #  fi
+  #fi
 
-  ln -si $workspace/.zshrc $HOME/.zshrc
-  ln -si $workspace/.config/compton.conf $HOME/.config/compton.conf
-  ln -si $workspace/.xinitrc $HOME/.xinitrc
-  ln -sdi $workspace/.config/i3 $HOME/.config/
-  ln -sdi $workspace/.config/polybar $HOME/.config/
-  ln -sdi $workspace/.config/dunst $HOME/.config/
+  ln -sf $workspace/.zshrc $HOME/.zshrc
+  ln -sf $workspace/.config/compton.conf $HOME/.config/compton.conf
+  ln -sf $workspace/.xinitrc $HOME/.xinitrc
+  ln -sfn $workspace/.config/i3 $HOME/.config/
+  ln -sfn $workspace/.config/polybar $HOME/.config/
+  ln -sfn $workspace/.config/dunst $HOME/.config/
 
   # vim plus
   # if [ ! -d $HOME/.vimplus ]; then
@@ -63,7 +63,7 @@ config() {
 
 }
 
-archlinuxcn()
-install()
-config()
+archlinuxcn
+install
+config
 

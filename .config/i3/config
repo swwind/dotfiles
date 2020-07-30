@@ -235,15 +235,14 @@ bindsym XF86MonBrightnessUp exec --no-startup-id lux -a 50
 # Application Launcher
 # TODO: change to `environment variables`
 bindsym $mod+o mode "$funclauncher"
-set $funclauncher App: (w)eb browser, (f)ile manager, (m)usic player, (s)creenshot, (t)ypora
+set $funclauncher App: (w)eb browser, (f)ile manager, (m)usic player, (t)ypora
 
 mode "$funclauncher" {
-  bindsym w exec --no-startup-id google-chrome-stable --force-device-scale-factor=1.20; mode "default"
-  bindsym t exec --no-startup-id typora --force-device-scale-factor=1.25; mode "default";
-  bindsym Shift+w exec --no-startup-id google-chrome-stable --disable-web-security; mode "default"
+  bindsym w exec --no-startup-id google-chrome-stable --force-device-scale-factor=1.20 --force-dark-mode --enable-features=WebUIDarkMode; mode "default"
+  bindsym Shift+w exec --no-startup-id google-chrome-stable --force-device-scale-factor=1.20; mode "default"
+  bindsym t exec --no-startup-id typora --force-device-scale-factor=1.25; mode "default"
   bindsym f exec --no-startup-id thunar; mode "default"
   bindsym m exec --no-startup-id electron-netease-cloud-music; mode "default"
-  bindsym s exec --no-startup-id gnome-screenshot -a; mode "default"
   bindsym Escape mode "default"
   bindsym Return mode "default"
 }
