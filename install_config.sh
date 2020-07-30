@@ -3,13 +3,13 @@
 workspace=$(dirname `realpath "$0"`)
 
 if [ ! -d $HOME/.config ]; then
-mkdir $HOME/.config
+  mkdir $HOME/.config
 fi
 if [ ! -d $HOME/Applications ]; then
-mkdir $HOME/Applications
+  mkdir $HOME/Applications
 fi
 if [ ! -d $HOME/Repositories ]; then
-mkdir $HOME/Repositories
+  mkdir $HOME/Repositories
 fi
 
 # oh-my-zsh
@@ -23,6 +23,7 @@ fi
 ln -sf $workspace/.zshrc $HOME/.zshrc
 ln -sf $workspace/.config/compton.conf $HOME/.config/compton.conf
 ln -sf $workspace/.xinitrc $HOME/.xinitrc
+ln -sf $workspace/.pam_environment $HOME/.pam_environment
 ln -sfn $workspace/.config/i3 $HOME/.config/
 ln -sfn $workspace/.config/polybar $HOME/.config/
 ln -sfn $workspace/.config/dunst $HOME/.config/
