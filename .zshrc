@@ -1,5 +1,5 @@
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/.yarn/bin:$HOME/Applications:/usr/local/bin:$PATH
+export PATH=$HOME/.deno/bin:$HOME/.yarn/bin:$HOME/Applications:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
