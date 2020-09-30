@@ -15,7 +15,7 @@ archlinuxcn() {
 install() {
   echo "===== (2) Install Packages ====="
 
-  sudo pacman -S xorg i3-gaps polybar dunst fcitx compton xorg-init curl \
+  sudo pacman -S xorg i3-gaps polybar dunst fcitx compton xorg-xinit curl \
                  zsh wqy-microhei wqy-zenhei pulseaudio pulseaudio-alsa \
                  pamixer nitrogen lxappearance pavucontrol polkit-gnome fcitx-{gtk2,gtk3,qt4,qt5} \
                  pikaur xfce4-terminal nerd-fonts-complete google-chrome visual-studio-code-bin \
