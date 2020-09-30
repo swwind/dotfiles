@@ -22,7 +22,7 @@ install() {
                  nodejs npm flameshot electron-netease-cloud-music git playerctl python-gobject \
                  libsodium xclip
 
-  pikaur -S lux clipit electron-ssr
+  # pikaur -S lux clipit electron-ssr
 }
 
 config() {
