@@ -265,12 +265,12 @@ mode "$settings" {
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 # load wallpapers and xorg composite managers
 # TODO: compton config
-exec --no-startup-id nitrogen --restore; sleep 1; compton -b
+exec --no-startup-id nitrogen --restore; sleep 1; picom -b
 # load clipboard manager
 exec --no-startup-id nm-applet&
 exec --no-startup-id clipit&
 # load fcitx
-exec --no-startup-id fcitx
+exec --no-startup-id fcitx5
 # load desktop notification
 # TODO: ~/.config/dunst (low, normal, critical)
 exec --no-startup-id dunst&

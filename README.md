@@ -9,6 +9,17 @@ For **Manjaro/Arch Linux** users, you can just do as the following,
 ```bash
 git clone https://github.com/swwind/dotfiles .dotfiles
 cd .dotfiles
-./install.sh
+
+# install i3wm
+./install-i3.sh
+# or install awesome wm
+./install-awesome.sh
 ```
+
+## Utils included
+
+```bash
+./ssr.sh # fast set up a socks proxy (requires nodejs installed)
+```
+
 
