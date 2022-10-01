@@ -11,7 +11,7 @@ NC='\033[0m'
 archlinuxcn() {
   echo "===== (1) Add Archlinux CN ====="
 
-  read skip -p "Continue? [Y/n] "
+  read -p "Continue? [Y/n] " skip
   if [[ $skip -eq n ]]; then
     echo "===== (1) Add Archlinux CN ${RED}Skiped${NC} ====="
     return
@@ -27,7 +27,7 @@ archlinuxcn() {
 install() {
   echo "===== (2) Install Packages ====="
 
-  read skip -p "Continue? [Y/n] "
+  read -p "Continue? [Y/n] " skip
   if [[ $skip -eq n ]]; then
     echo "===== (2) Install Packages ${RED}Success${NC} ====="
     return
@@ -51,7 +51,7 @@ install() {
 config() {
   echo "===== (3) Configurations ====="
 
-  read skip -p "Continue? [Y/n] "
+  read -p "Continue? [Y/n] " skip
   if [[ $skip -eq n ]]; then
     return
   fi
