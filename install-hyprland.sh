@@ -37,7 +37,7 @@ install() {
     paru kitty wofi slurp grim network-manager-applet \
     dunst light playerctl wl-clipboard swaylock-effects
 
-  paru -S --noconfig \
+  paru -S --noconfirm \
     hyprland-git hyprpaper-git waybar-hyprland
 
   # oh-my-zsh
