@@ -1,4 +1,0 @@
-./ssr.sh sub       -> fetch subscribe and select a node 
-./ssr.sh start     -> start ssr
-./ssr.sh stop      -> stop ssr
-./ssr.sh destruct  -> uninstall ssr
