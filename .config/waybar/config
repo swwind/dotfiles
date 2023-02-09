@@ -1,7 +1,10 @@
-{
-  "gtk-layer-shell": true,
+[{
   "layer": "top",
   "position": "bottom",
+  "output": "eDP-2",
+  "include": [
+    "~/.config/waybar/modules.json"
+  ],
   "modules-left": [
     "cpu",
     "memory",
@@ -17,111 +20,24 @@
     "network",
     "clock",
     "battery"
+  ]
+}, {
+  "layer": "top",
+  "position": "bottom",
+  "passthrough": true,
+  "output": "DP-1",
+  "include": [
+    "~/.config/waybar/modules.json"
   ],
-  "pulseaudio": {
-    "tooltip": false,
-    "scroll-step": 5,
-    "format": "{icon} {volume}%",
-    "format-muted": "婢 {volume}%",
-    "format-icons": {
-      "default": [
-        "奄",
-        "奔",
-        "墳"
-      ]
-    },
-    "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
-  },
-  "river/tags": {
-    "num-tags": 6,
-    "disable-click": true
-  },
-  "wlr/workspaces": {
-    "sort-by-name": true,
-    "format": "{name}",
-    "on-click": "activate"
-  },
-  "hyprland/window": {
-    "format": "{}"
-  },
-  "network": {
-    "tooltip": false,
-    "format": "{icon} {ipaddr}",
-    "format-icons": {
-      "wifi": [
-        " "
-      ],
-      "ethernet": [
-        " "
-      ],
-      "disconnected": [
-        " "
-      ]
-    },
-    "on-click": ""
-  },
-  "backlight": {
-    "on-scroll-up": "light -A 5%",
-    "on-scroll-down": "light -U 5%",
-    "interval": 1,
-    "align": 0,
-    "rotate": 0,
-    "format": "{icon} {percent}%",
-    "format-icons": [
-      "",
-      "",
-      "",
-      ""
+  "modules-left": [
+    "custom/media",
+      "tray"
+  ],
+  "modules-center": [
+      "wlr/workspaces"
     ],
-    "on-click": "",
-    "smooth-scrolling-threshold": 1
-  },
-  "battery": {
-    "states": {
-      "good": 95,
-      "warning": 30,
-      "critical": 20
-    },
-    "format": "{icon} {capacity}%",
-    "format-charging": " {capacity}%",
-    "format-plugged": " {capacity}%",
-    "format-alt": "{time} {icon}",
-    "format-icons": [
-      " ",
-      " ",
-      " ",
-      " ",
-      " "
+    "modules-right": [
+      "clock",
+  "battery"
     ]
-  },
-  "tray": {
-    "icon-size": 18,
-    "spacing": 10
-  },
-  "clock": {
-    "format": "{: %I:%M %p}",
-    "format-alt": "{: %I:%M %p  %d/%m/%Y}"
-  },
-  "cpu": {
-    "interval": 15,
-    "format": " {}%",
-    "max-length": 10
-  },
-  "memory": {
-    "interval": 30,
-    "format": " {}%",
-    "max-length": 10
-  },
-  "custom/media": {
-    "format": "{icon} {}",
-    "escape": true,
-    "return-type": "json",
-    "max-length": 40,
-    "on-click": "playerctl play-pause",
-    "on-click-right": "playerctl stop",
-    "smooth-scrolling-threshold": 10, // This value was tested using a trackpad, it should be lowered if using a mouse.
-    "on-scroll-up": "playerctl next",
-    "on-scroll-down": "playerctl previous",
-    "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null", // Script in resources/custom_modules folder
-  }
-}
+}]
