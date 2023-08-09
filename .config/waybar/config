@@ -1,7 +1,7 @@
 [{
   "layer": "top",
   "position": "bottom",
-  "output": "eDP-2",
+  "output": ["eDP-1", "eDP-2"],
   "include": [
     "~/.config/waybar/modules.json"
   ],
@@ -24,7 +24,6 @@
 }, {
   "layer": "top",
   "position": "bottom",
-  "passthrough": true,
   "output": "DP-1",
   "include": [
     "~/.config/waybar/modules.json"
