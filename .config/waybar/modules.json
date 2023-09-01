@@ -2,11 +2,10 @@
   "pulseaudio": {
     "tooltip": false,
     "scroll-step": 5,
-    "format": "{icon} {volume}%",
-    "format-muted": "婢 {volume}%",
+    "format": "{icon}  {volume}%",
+    "format-muted": "婢  {volume}%",
     "format-icons": {
       "default": [
-        "奄",
         "奔",
         "墳"
       ]
@@ -17,7 +16,7 @@
     "num-tags": 6,
     "disable-click": true
   },
-  "wlr/workspaces": {
+  "hyprland/workspaces": {
     "sort-by-name": true,
     "format": "{name}",
     "on-click": "activate"
@@ -27,7 +26,7 @@
   },
   "network": {
     "tooltip": false,
-    "format": "{icon} {ipaddr}",
+    "format": "{icon}  {ipaddr}",
     "format-icons": {
       "wifi": [
         " "
@@ -47,7 +46,7 @@
     "interval": 1,
     "align": 0,
     "rotate": 0,
-    "format": "{icon} {percent}%",
+    "format": "{icon}  {percent}%",
     "format-icons": [
       "",
       "",
@@ -63,10 +62,10 @@
       "warning": 30,
       "critical": 20
     },
-    "format": "{icon} {capacity}%",
-    "format-charging": " {capacity}%",
-    "format-plugged": " {capacity}%",
-    "format-alt": "{time} {icon}",
+    "format": "{icon}   {capacity}%",
+    "format-charging": "   {capacity}%",
+    "format-plugged": "   {capacity}%",
+    "format-alt": "{time}   {icon}",
     "format-icons": [
       " ",
       " ",
@@ -80,26 +79,26 @@
     "spacing": 10
   },
   "clock": {
-    "format": "{: %I:%M %p}",
-    "format-alt": "{: %I:%M %p  %d/%m/%Y}"
+    "format": "{:  %I:%M %p}",
+    "format-alt": "{:  %I:%M %p    %Y/%m/%d}"
   },
   "cpu": {
     "interval": 15,
-    "format": " {}%",
+    "format": "  {}%",
     "max-length": 10
   },
   "memory": {
     "interval": 30,
-    "format": " {}%",
+    "format": "   {}%",
     "max-length": 10
   },
   "custom/media": {
-    "format": "{icon} {}",
+    "format": "{}",
     "escape": true,
     "return-type": "json",
     "max-length": 40,
     "on-click": "playerctl play-pause",
-    "on-click-right": "playerctl stop",
+    "on-click-right": "playerctl next",
     "smooth-scrolling-threshold": 10, // This value was tested using a trackpad, it should be lowered if using a mouse.
     "on-scroll-up": "playerctl next",
     "on-scroll-down": "playerctl previous",

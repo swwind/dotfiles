@@ -1,7 +1,7 @@
 [{
   "layer": "top",
-  "position": "bottom",
-  "output": ["eDP-1", "eDP-2"],
+  "position": "top",
+  "output": ["eDP-1", "eDP-2", "DP-1"],
   "include": [
     "~/.config/waybar/modules.json"
   ],
@@ -12,7 +12,7 @@
     "tray"
   ],
   "modules-center": [
-    "wlr/workspaces"
+    "hyprland/workspaces"
   ],
   "modules-right": [
     "backlight",
@@ -21,22 +21,4 @@
     "clock",
     "battery"
   ]
-}, {
-  "layer": "top",
-  "position": "bottom",
-  "output": "DP-1",
-  "include": [
-    "~/.config/waybar/modules.json"
-  ],
-  "modules-left": [
-    "custom/media",
-      "tray"
-  ],
-  "modules-center": [
-      "wlr/workspaces"
-    ],
-    "modules-right": [
-      "clock",
-  "battery"
-    ]
 }]
