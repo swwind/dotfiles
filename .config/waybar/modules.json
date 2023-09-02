@@ -10,11 +10,15 @@
         "墳"
       ]
     },
-    "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
+    "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+    "smooth-scrolling-threshold": 1
   },
-  "river/tags": {
-    "num-tags": 6,
-    "disable-click": true
+  "idle_inhibitor": {
+    "format": "{icon} ",
+    "format-icons": {
+      "activated": "",
+      "deactivated": ""
+    }
   },
   "hyprland/workspaces": {
     "sort-by-name": true,

@@ -17,6 +17,7 @@
   "modules-right": [
     "backlight",
     "pulseaudio",
+    "idle_inhibitor",
     "network",
     "clock",
     "battery"
