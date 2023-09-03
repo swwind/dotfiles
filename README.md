@@ -2,9 +2,11 @@
 
 Hyprland is awesome!
 
-![preview](./preview.png)
+![preview](./preview2.png)
 
 ## Install
+
+Suggested font: `ttf-harmonyos-sans` (AUR)
 
 ### dot files
 
