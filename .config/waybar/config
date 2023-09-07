@@ -8,8 +8,8 @@
   "modules-left": [
     "cpu",
     "memory",
-    "custom/media",
-    "tray"
+    "tray",
+    "custom/media"
   ],
   "modules-center": [
     "hyprland/workspaces"
