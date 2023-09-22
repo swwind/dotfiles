@@ -30,7 +30,8 @@
   },
   "network": {
     "tooltip": false,
-    "format": "{icon}  {ipaddr}",
+    "interval": 1,
+    "format": "󱦲 {bandwidthUpBytes} 󱦳 {bandwidthDownBytes}",
     "format-icons": {
       "wifi": [
         " "
@@ -41,8 +42,7 @@
       "disconnected": [
         " "
       ]
-    },
-    "on-click": ""
+    }
   },
   "backlight": {
     "on-scroll-up": "light -A 5%",
