@@ -11,6 +11,7 @@
       ]
     },
     "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+    "on-click-right": "pavucontrol",
     "smooth-scrolling-threshold": 1
   },
   "idle_inhibitor": {
@@ -31,7 +32,8 @@
   "network": {
     "tooltip": false,
     "interval": 1,
-    "format": "󱦲 {bandwidthUpBytes} 󱦳 {bandwidthDownBytes}",
+    "format": "{icon}  {ipaddr}",
+    "format-alt": "󱦲 {bandwidthUpBytes} 󱦳 {bandwidthDownBytes}",
     "format-icons": {
       "wifi": [
         " "
